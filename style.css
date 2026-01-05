@@ -1,0 +1,1011 @@
+/* ===============================
+   COLOR PALETTE
+================================ */
+:root {
+  --ink: #000957;
+  --blue-strong: #344CB7;
+  --blue-electric: #577BC1;
+  --neon: #FFEB00;
+  --bg-main: #EEF1FF;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+body {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--ink);
+
+  /* Base background */
+  background-color: var(--bg-main);
+
+  
+}
+
+/* Rotate background using pseudo-layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  background-image:
+    radial-gradient(rgba(0, 9, 87, 0.42) 1px, transparent 1px);
+  background-size: 18px 18px;
+  transform: rotate(-15deg);
+  z-index: -1;
+}
+
+/* Breathing space */
+section.container {
+  margin-top: 60px;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  background: var(--blue-strong) !important;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+  font-weight: 800;
+}
+
+/* Login button */
+.btn-dark {
+  background: var(--neon);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  font-weight: 900;
+}
+
+/* Search input and button */
+.search-input {
+  border: 3px solid var(--ink);
+  border-radius: 12px 0 0 12px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.search-btn {
+  background: var(--neon);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  font-weight: 900;
+  background: white;
+  transition: background 0.15s;
+}
+
+.search-btn:hover {
+  background: #ffe600;
+}
+
+/* ===============================
+   CATEGORY OPTIONS
+================================ */
+.category-box {
+  background: var(--blue-electric);
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.category-btn {
+  background: var(--neon);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 18px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.category-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+
+/* ===============================
+   INDIAN THEME CATEGORY SECTION
+================================ */
+.category-indian {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Content wrapper */
+.category-wrapper {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid var(--ink);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+/* Title */
+.category-title {
+  font-weight: 900;
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* 2x2 MATRIX */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* Buttons (reuse palette) */
+.category-grid .category-btn {
+  background: var(--neon);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.category-grid .category-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* ===============================
+   CAROUSEL (FIXED)
+================================ */
+.carousel-box {
+  /* background: white; */
+  /* border: 3px solid var(--ink); */
+  /* border-radius: 26px; */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  /* box-shadow: 6px 6px 0 var(--ink); */
+  margin-bottom: 40px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+.carousel-card {
+  flex: 0 0 calc(50% - 10px);
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  padding: 16px;
+  /* box-shadow: 4px 4px 0 var(--ink); */
+}
+
+.image-placeholder {
+  height: 120px;
+  border: 3px dashed var(--ink);
+  border-radius: 12px;
+  background: var(--blue-electric);
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  background: var(--neon);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+  background: linear-gradient(135deg, var(--blue-strong), var(--blue-electric));
+  border: 4px solid var(--ink);
+  border-radius: 32px;
+  padding: 70px;
+  box-shadow: 8px 8px 0 var(--ink);
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-weight: 900;
+}
+
+.hero p {
+  opacity: 0.95;
+}
+
+/* Buttons */
+.btn-warning {
+  background: var(--neon);
+  border: 3px solid var(--ink);
+  font-weight: 900;
+}
+
+.btn-outline-dark {
+  border: 3px solid var(--ink);
+  color: #fff;
+  font-weight: 900;
+}
+/*Bee Animation*/
+.hero-decorations {
+    position: absolute;
+    top: 600px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.bee {
+    position: absolute;
+    color: #fbbf24;
+    font-size: 1.5rem;
+    animation: fly 8s linear infinite;
+}
+
+.bee-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bee-2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.bee-3 {
+    top: 240%;
+    left: 50%;
+    animation-delay: 6s;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(100px, -50px) rotate(90deg); }
+    50% { transform: translate(200px, 0) rotate(180deg); }
+    75% { transform: translate(100px, 50px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* ===============================
+  DASHBOARD CARDS
+================================ */
+.soft-card {
+  background: var(--blue-electric);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* ===============================
+  ICON GRID
+================================ */
+.icon-card {
+  background: var(--neon);
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  padding: 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.icon-card h6 {
+  margin-top: 10px;
+  font-weight: 900;
+}
+
+/* ===============================
+   TRUSTED BY INDUSTRY
+================================ */
+.trusted-box {
+  background: var(--blue-strong);
+  background: linear-gradient(135deg, var(--blue-strong), var(--blue-electric));
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 6px 6px 0 var(--ink);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.industry-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.industry-logos span {
+  background: var(--neon);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* ===============================
+   LOCAL MEETUPS (THEMED)
+================================ */
+.meetups-section {
+  margin-top: 80px;
+}
+
+.meetups-header {
+  /* text-align: center; */
+  margin-bottom: 40px;
+}
+
+.meetups-header h2 {
+  font-weight: 900;
+}
+
+.meetups-header p {
+  opacity: 0.85;
+}
+
+/* HEADER ROW WITH VIEW MORE */
+.meetups-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* View More Button */
+.view-more-btn {
+  text-decoration: none;
+  background: var(--neon);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 10px 18px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.view-more-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Mobile alignment */
+@media (max-width: 768px) {
+  .meetups-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* Meetup Card */
+.meetup-card {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 6px 6px 0 var(--ink);
+  height: 100%;
+}
+
+/* Tag + Date */
+.meetup-tag {
+  display: inline-block;
+  background: var(--neon);
+  color: var(--ink);
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--ink);
+}
+
+.meetup-date {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-weight: 900;
+  color: var(--blue-strong);
+}
+
+/* Text */
+.meetup-card h5 {
+  margin-top: 18px;
+  font-weight: 900;
+}
+
+.meetup-desc {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Info List */
+.meetup-info {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+}
+
+.meetup-info li {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Button */
+.meetup-btn {
+  width: 100%;
+  background: var(--blue-strong);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.meetup-btn:hover {
+  background: var(--blue-electric);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+
+/* ===============================
+   UPCOMING HACKATHONS (THEMED)
+================================ */
+.hackathons-section {
+  margin-top: 80px;
+}
+
+.hackathons-header {
+  margin-bottom: 40px;
+}
+
+.hackathons-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hackathons-title-row h2 {
+  font-weight: 900;
+}
+
+.hackathons-title-row p {
+  opacity: 0.85;
+}
+
+/* Hackathon Card */
+.hackathon-card {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 6px 6px 0 var(--ink);
+  height: 100%;
+}
+
+/* Tag + Prize */
+.hackathon-tag {
+  display: inline-block;
+  background: var(--neon);
+  color: var(--ink);
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--ink);
+}
+
+.hackathon-prize {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-weight: 900;
+  color: var(--blue-strong);
+}
+
+/* Text */
+.hackathon-card h5 {
+  margin-top: 18px;
+  font-weight: 900;
+}
+
+.hackathon-desc {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Info */
+.hackathon-info {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+}
+
+.hackathon-info li {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Button */
+.hackathon-btn {
+  width: 100%;
+  background: var(--blue-strong);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.hackathon-btn:hover {
+  background: var(--blue-electric);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hackathons-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===============================
+   FEATURED WORKSHOPS (THEMED)
+================================ */
+.workshops-section {
+  margin-top: 80px;
+}
+
+.workshops-header {
+  margin-bottom: 40px;
+}
+
+.workshops-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.workshops-title-row h2 {
+  font-weight: 900;
+}
+
+.workshops-title-row p {
+  opacity: 0.85;
+}
+
+/* Workshop Card */
+.workshop-card {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 6px 6px 0 var(--ink);
+  height: 100%;
+}
+
+/* Tag + Price */
+.workshop-tag {
+  display: inline-block;
+  background: var(--neon);
+  color: var(--ink);
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--ink);
+}
+
+.workshop-price {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-weight: 900;
+  color: var(--blue-strong);
+}
+
+/* Text */
+.workshop-card h5 {
+  margin-top: 18px;
+  font-weight: 900;
+}
+
+.workshop-desc {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Info */
+.workshop-info {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+}
+
+.workshop-info li {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Button */
+.workshop-btn {
+  width: 100%;
+  background: var(--blue-strong);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.workshop-btn:hover {
+  background: var(--blue-electric);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .workshops-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* ===============================
+   STAY UPDATED SECTION
+================================ */
+.stay-updated-section {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.stay-updated-box {
+  background: linear-gradient(
+    135deg,
+    var(--blue-strong),
+    var(--blue-electric)
+  );
+  border: 4px solid var(--ink);
+  border-radius: 32px;
+  padding: 60px 40px;
+  box-shadow: 8px 8px 0 var(--ink);
+  text-align: center;
+  color: #fff;
+}
+
+.stay-updated-box h3 {
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.stay-updated-box p {
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+/* Form */
+.stay-updated-form {
+  display: flex;
+  justify-content: center;
+  max-width: 520px;
+  margin: 0 auto;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.stay-updated-form input {
+  flex: 1;
+  border: none;
+  padding: 14px 18px;
+  font-family: inherit;
+  font-weight: 700;
+  outline: none;
+}
+
+.stay-updated-form button {
+  background: var(--neon);
+  color: var(--ink);
+  border: none;
+  padding: 14px 26px;
+  font-weight: 900;
+  cursor: pointer;
+  transition:  0.15s;
+}
+
+.stay-updated-form button:hover {
+  background: #ffe600;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .stay-updated-box {
+    padding: 40px 20px;
+  }
+
+  .stay-updated-form {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .stay-updated-form button {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  font-weight: 800;
+}
+
+/* ===============================
+   TECHHUB FOOTER (THEMED)
+================================ */
+.techhub-footer {
+  background: var(--blue-strong);
+  margin-top: 80px;
+  padding: 70px 0 30px;
+}
+
+.footer-wrapper {
+  background: var(--blue-electric);
+  border: 4px solid var(--ink);
+  border-radius: 32px;
+  padding: 50px 40px 30px;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+/* Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* Brand */
+.footer-brand h4 {
+  font-weight: 900;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Socials */
+.footer-socials {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  background: var(--neon);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.footer-socials a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+
+/* Columns */
+.footer-col h6 {
+  font-weight: 900;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 2px solid rgba(255,255,255,0.25);
+  padding-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ===============================
+   TECHHUB DIVIDER
+================================ */
+.techhub-divider.dotted {
+  margin-top: 7%;
+  height: 0;
+  /* border-top: 3px dashed var(--ink); */
+  background: none;
+  box-shadow: none;
+}
+
+
+/* ===============================
+   FOOTER RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-wrapper {
+    padding: 40px 20px 25px;
+  }
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .carousel-card {
+    flex: 0 0 100%;
+  }
+
+  .category-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 40px;
+  }
+}
+
+/* ===============================
+   LOGIN PAGE STYLES
+================================ */
+.login-section {
+  margin-top: 80px;
+}
+
+.login-card {
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.login-input {
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.login-btn {
+  background: var(--blue-strong);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.login-btn:hover {
+  background: var(--blue-electric);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.input-group .btn {
+  border: 3px solid var(--ink);
+  background: var(--neon);
+  color: var(--ink);
+  font-weight: 900;
+  border-radius: 0 12px 12px 0;
+  background: white;
+}
+
+.input-group .btn:hover {
+  background:yellow;
+}
+
