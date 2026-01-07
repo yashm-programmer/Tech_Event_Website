@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshops - TechHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-pill mx-3 mt-3 px-4">
+  <a class="navbar-brand fw-bold" href="index.html">TechHub</a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="hackathon.html">Hackathon</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Workshops</a></li>
+      <li class="nav-item"><a class="nav-link" href="meetup.html">Meet-ups</a></li>
+      <li class="nav-item"><a class="nav-link" href="bootcamp.html">Bootcamps</a></li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <form class="d-flex me-3" role="search">
+          <input class="form-control search-input" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </li>
+        <a class="btn btn-dark rounded-pill px-4" href="login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- WORKSHOPS HEADER -->
+<section class="container mt-5">
+  <div class="text-center">
+    <h1 class="fw-bold">All Workshops</h1>
+    <p>Learn from industry experts and enhance your skills</p>
+  </div>
+</section>
+
+<!-- SEARCH AND FILTERS -->
+<section class="container mt-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-4">
+      <input type="text" id="searchInput" class="form-control search-input" placeholder="Search workshops...">
+    </div>
+    <div class="col-md-3">
+      <select id="priceFilter" class="form-select">
+        <option value="">All Prices</option>
+        <option value="Free">Free</option>
+        <option value="Paid">Paid</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="skillFilter" class="form-select">
+        <option value="">All Skills</option>
+        <option value="React">React</option>
+        <option value="Machine Learning">Machine Learning</option>
+        <option value="DevOps">DevOps</option>
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select id="instructorFilter" class="form-select">
+        <option value="">All Instructors</option>
+        <option value="Sarah Johnson">Sarah Johnson</option>
+        <option value="Dr. Alex Chen">Dr. Alex Chen</option>
+        <option value="Mike Rodriguez">Mike Rodriguez</option>
+        <option value="Jane Doe">Jane Doe</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOPS GRID -->
+<section class="container mt-4">
+  <div class="row g-4" id="workshopsContainer">
+    <!-- Workshop cards will be populated by JS -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="techhub-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <h4>TechHub</h4>
+        <p>
+          Discover hackathons, workshops, meetups, and bootcamps.
+          Learn, build, and grow with the tech community.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- Events -->
+      <div class="footer-col">
+        <h6>Events</h6>
+        <ul>
+          <li><a href="hackathon.html">Hackathons</a></li>
+          <li><a href="workshop.html">Workshops</a></li>
+          <li><a href="meetup.html">Meetups</a></li>
+          <li><a href="bootcamp.html">Bootcamps</a></li>
+        </ul>
+      </div>
+      <!-- Community -->
+      <div class="footer-col">
+        <h6>Community</h6>
+        <ul>
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Organizers</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <!-- Resources -->
+      <div class="footer-col">
+        <h6>Resources</h6>
+        <ul>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <!-- Support -->
+      <div class="footer-col">
+        <h6>Support</h6>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>© 2025 TechHub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const workshops = [
+    {
+      title: "React Advanced Patterns",
+      desc: "Master advanced React patterns and performance optimization techniques.",
+      price: "$49",
+      duration: "4 hours",
+      rating: "4.8 (234 reviews)",
+      instructor: "Sarah Johnson",
+      skill: "React",
+      link: "Workshop-React_Advanced_Patterns.html"
+    },
+    {
+      title: "Machine Learning Fundamentals",
+      desc: "Get started with ML algorithms and practical implementation.",
+      price: "$79",
+      duration: "6 hours",
+      rating: "4.9 (456 reviews)",
+      instructor: "Dr. Alex Chen",
+      skill: "Machine Learning",
+      link: "#"
+    },
+    {
+      title: "DevOps Best Practices",
+      desc: "Learn CI/CD, containerization, and cloud deployment strategies.",
+      price: "Free",
+      duration: "3 hours",
+      rating: "4.7 (189 reviews)",
+      instructor: "Mike Rodriguez",
+      skill: "DevOps",
+      link: "#"
+    },
+    {
+      title: "Python for Data Science",
+      desc: "Comprehensive guide to using Python for data analysis and visualization.",
+      price: "$59",
+      duration: "5 hours",
+      rating: "4.6 (312 reviews)",
+      instructor: "Jane Doe",
+      skill: "Python",
+      link: "#"
+    },
+    {
+      title: "Advanced JavaScript Concepts",
+      desc: "Deep dive into closures, prototypes, and modern JS features.",
+      price: "$39",
+      duration: "4 hours",
+      rating: "4.5 (198 reviews)",
+      instructor: "Sarah Johnson",
+      skill: "JavaScript",
+      link: "#"
+    }
+  ];
+
+  function renderWorkshops(filtered = workshops) {
+    const container = document.getElementById('workshopsContainer');
+    container.innerHTML = '';
+    filtered.forEach(workshop => {
+      const card = `
+        <div class="col-12 workshop-card-wrapper">
+          <a href="${workshop.link}" class="card-link">
+            <div class="workshop-card">
+              <span class="workshop-tag">WORKSHOP</span>
+              <span class="workshop-price">${workshop.price}</span>
+              <h5>${workshop.title}</h5>
+              <p class="workshop-desc">${workshop.desc}</p>
+              <ul class="workshop-info">
+                <li>⏱ ${workshop.duration}</li>
+                <li>⭐ ${workshop.rating}</li>
+                <li>👤 ${workshop.instructor}</li>
+              </ul>
+              <button class="workshop-btn">Enroll Now</button>
+            </div>
+          </a>
+        </div>
+      `;
+      container.innerHTML += card;
+    });
+  }
+
+  function filterWorkshops() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const price = document.getElementById('priceFilter').value;
+    const skill = document.getElementById('skillFilter').value;
+    const instructor = document.getElementById('instructorFilter').value;
+
+    const filtered = workshops.filter(workshop => {
+      const matchesSearch = workshop.title.toLowerCase().includes(search) || workshop.desc.toLowerCase().includes(search);
+      const matchesPrice = !price || (price === 'Free' ? workshop.price === 'Free' : workshop.price !== 'Free');
+      const matchesSkill = !skill || workshop.skill === skill;
+      const matchesInstructor = !instructor || workshop.instructor === instructor;
+      return matchesSearch && matchesPrice && matchesSkill && matchesInstructor;
+    });
+    renderWorkshops(filtered);
+  }
+
+  document.getElementById('searchInput').addEventListener('input', filterWorkshops);
+  document.getElementById('priceFilter').addEventListener('change', filterWorkshops);
+  document.getElementById('skillFilter').addEventListener('change', filterWorkshops);
+  document.getElementById('instructorFilter').addEventListener('change', filterWorkshops);
+
+  // Initial render
+  renderWorkshops();
+</script>
+
+</body>
+</html>

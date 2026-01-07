@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootcamps - TechHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-pill mx-3 mt-3 px-4">
+  <a class="navbar-brand fw-bold" href="index.html">TechHub</a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="hackathon.html">Hackathon</a></li>
+      <li class="nav-item"><a class="nav-link" href="workshop.html">Workshops</a></li>
+      <li class="nav-item"><a class="nav-link" href="meetup.html">Meet-ups</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Bootcamps</a></li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <form class="d-flex me-3" role="search">
+          <input class="form-control search-input" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </li>
+        <a class="btn btn-dark rounded-pill px-4" href="login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BOOTCAMPS HEADER -->
+<section class="container mt-5">
+  <div class="text-center">
+    <h1 class="fw-bold">All Bootcamps</h1>
+    <p>Intensive training programs to accelerate your career</p>
+  </div>
+</section>
+
+<!-- SEARCH AND FILTERS -->
+<section class="container mt-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-4">
+      <input type="text" id="searchInput" class="form-control search-input" placeholder="Search bootcamps...">
+    </div>
+    <div class="col-md-3">
+      <select id="priceFilter" class="form-select">
+        <option value="">All Prices</option>
+        <option value="Free">Free</option>
+        <option value="Paid">Paid</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="skillFilter" class="form-select">
+        <option value="">All Skills</option>
+        <option value="Full-Stack">Full-Stack</option>
+        <option value="Data Science">Data Science</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="AI/ML">AI/ML</option>
+        <option value="Mobile Development">Mobile Development</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select id="durationFilter" class="form-select">
+        <option value="">All Durations</option>
+        <option value="4 weeks">4 weeks</option>
+        <option value="8 weeks">8 weeks</option>
+        <option value="12 weeks">12 weeks</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- BOOTCAMPS GRID -->
+<section class="container mt-4">
+  <div class="row g-4" id="bootcampsContainer">
+    <!-- Bootcamp cards will be populated by JS -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="techhub-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <h4>TechHub</h4>
+        <p>
+          Discover hackathons, workshops, meetups, and bootcamps.
+          Learn, build, and grow with the tech community.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- Events -->
+      <div class="footer-col">
+        <h6>Events</h6>
+        <ul>
+          <li><a href="hackathon.html">Hackathons</a></li>
+          <li><a href="workshop.html">Workshops</a></li>
+          <li><a href="meetup.html">Meetups</a></li>
+          <li><a href="bootcamp.html">Bootcamps</a></li>
+        </ul>
+      </div>
+      <!-- Community -->
+      <div class="footer-col">
+        <h6>Community</h6>
+        <ul>
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Organizers</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <!-- Resources -->
+      <div class="footer-col">
+        <h6>Resources</h6>
+        <ul>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <!-- Support -->
+      <div class="footer-col">
+        <h6>Support</h6>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>© 2025 TechHub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const bootcamps = [
+    {
+      title: "Full-Stack Web Development Bootcamp",
+      desc: "Comprehensive training in front-end and back-end technologies.",
+      price: "$2,999",
+      duration: "12 weeks",
+      skill: "Full-Stack",
+      instructor: "TechHub Team",
+      link: "Bootcamp-Full_Stack_Web_Development_Bootcamp.html"
+    },
+    {
+      title: "Data Science Intensive",
+      desc: "Master data analysis, visualization, and machine learning.",
+      price: "$1,999",
+      duration: "8 weeks",
+      skill: "Data Science",
+      instructor: "Dr. Data Expert",
+      link: "#"
+    },
+    {
+      title: "Cybersecurity Fundamentals",
+      desc: "Learn to protect systems and networks from cyber threats.",
+      price: "$1,499",
+      duration: "6 weeks",
+      skill: "Cybersecurity",
+      instructor: "Security Pro",
+      link: "#"
+    },
+    {
+      title: "AI & Machine Learning Bootcamp",
+      desc: "Dive deep into artificial intelligence and ML algorithms.",
+      price: "$2,499",
+      duration: "10 weeks",
+      skill: "AI/ML",
+      instructor: "AI Guru",
+      link: "#"
+    },
+    {
+      title: "Mobile App Development",
+      desc: "Build native and cross-platform mobile applications.",
+      price: "$1,799",
+      duration: "8 weeks",
+      skill: "Mobile Development",
+      instructor: "Mobile Dev Lead",
+      link: "#"
+    }
+  ];
+
+  function renderBootcamps(filtered = bootcamps) {
+    const container = document.getElementById('bootcampsContainer');
+    container.innerHTML = '';
+    filtered.forEach(bootcamp => {
+      const card = `
+        <div class="col-12 bootcamp-card-wrapper">
+          <a href="${bootcamp.link}" class="card-link">
+            <div class="workshop-card"> <!-- Reuse workshop card style -->
+              <span class="workshop-tag">BOOTCAMP</span>
+              <span class="workshop-price">${bootcamp.price}</span>
+              <h5>${bootcamp.title}</h5>
+              <p class="workshop-desc">${bootcamp.desc}</p>
+              <ul class="workshop-info">
+                <li>⏱ ${bootcamp.duration}</li>
+                <li>👤 ${bootcamp.instructor}</li>
+              </ul>
+              <button class="workshop-btn">Enroll Now</button>
+            </div>
+          </a>
+        </div>
+      `;
+      container.innerHTML += card;
+    });
+  }
+
+  function filterBootcamps() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const price = document.getElementById('priceFilter').value;
+    const skill = document.getElementById('skillFilter').value;
+    const duration = document.getElementById('durationFilter').value;
+
+    const filtered = bootcamps.filter(bootcamp => {
+      const matchesSearch = bootcamp.title.toLowerCase().includes(search) || bootcamp.desc.toLowerCase().includes(search);
+      const matchesPrice = !price || (price === 'Free' ? bootcamp.price === 'Free' : bootcamp.price !== 'Free');
+      const matchesSkill = !skill || bootcamp.skill === skill;
+      const matchesDuration = !duration || bootcamp.duration === duration;
+      return matchesSearch && matchesPrice && matchesSkill && matchesDuration;
+    });
+    renderBootcamps(filtered);
+  }
+
+  document.getElementById('searchInput').addEventListener('input', filterBootcamps);
+  document.getElementById('priceFilter').addEventListener('change', filterBootcamps);
+  document.getElementById('skillFilter').addEventListener('change', filterBootcamps);
+  document.getElementById('durationFilter').addEventListener('change', filterBootcamps);
+
+  // Initial render
+  renderBootcamps();
+</script>
+
+</body>
+</html>
