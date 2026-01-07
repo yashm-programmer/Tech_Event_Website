@@ -205,7 +205,7 @@ section.container {
 }
 
 .image-placeholder {
-  height: 120px;
+  height: 200px;
   border: 3px dashed var(--ink);
   border-radius: 12px;
   background: var(--blue-electric);
@@ -214,6 +214,34 @@ section.container {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--neon);
+}
+
+.image-placeholder::before {
+  content: "📷";
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.7;
+}
+
+.image-placeholder:hover::before {
+  animation: cameraFlash 0.6s ease-in-out;
+}
+
+@keyframes cameraFlash {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 .carousel-arrow {
@@ -239,14 +267,29 @@ section.container {
   box-shadow: 8px 8px 0 var(--ink);
   color: #fff;
   margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  animation: heroGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  0% { box-shadow: 8px 8px 0 var(--ink), 0 0 20px rgba(255, 235, 0, 0.3); }
+  100% { box-shadow: 8px 8px 0 var(--ink), 0 0 40px rgba(255, 235, 0, 0.6); }
 }
 
 .hero h1 {
   font-weight: 900;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .hero p {
   opacity: 0.95;
+  animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 /* Buttons */
@@ -304,16 +347,174 @@ section.container {
     100% { transform: translate(0, 0) rotate(360deg); }
 }
 
-/* ===============================
-  DASHBOARD CARDS
-================================ */
-.soft-card {
+/* Interactive Skill Badges */
+.skill-badge {
+  display: inline-block;
   background: var(--blue-electric);
-  color: #fff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skill-badge:hover {
+  background: var(--neon);
+  color: var(--ink);
+  transform: scale(1.1);
+  border-color: var(--ink);
+}
+
+/* Timeline Progress */
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--blue-electric);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--neon);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  background: var(--blue-strong);
+  transform: scale(1.2);
+}
+
+.timeline-item strong {
+  color: var(--blue-strong);
+  font-weight: 900;
+}
+
+/* Enhanced Register Button */
+.register-btn {
+  background: var(--neon);
+  color: var(--ink);
   border: 3px solid var(--ink);
-  border-radius: 24px;
-  padding: 26px;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.register-btn:hover {
+  transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 var(--ink);
+  background: #ffe600;
+}
+
+.register-btn::before {
+  content: "🚀";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+
+.register-btn:hover::before {
+  left: 10px;
+}
+
+.register-btn span {
+  margin-left: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Interactive Badges */
+.interactive-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.interactive-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.interactive-badge.date-badge {
+  background: linear-gradient(135deg, var(--blue-strong), var(--blue-electric));
+  color: white;
+}
+
+.interactive-badge.location-badge {
+  background: var(--neon);
+  color: var(--ink);
+}
+
+.interactive-badge.participants-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  color: white;
+}
+
+/* Trophy Colors */
+.text-gold { color: #FFD700; }
+.text-bronze { color: #CD7F32; }
+
+/* Countdown Timer */
+.countdown-timer {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--ink);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.countdown-timer h5 {
+  color: var(--blue-strong);
+  margin-bottom: 15px;
+}
+
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-item {
+  background: var(--neon);
+  color: var(--ink);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border: 2px solid var(--ink);
+  min-width: 60px;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: var(--ink);
 }
 
 /* ===============================
@@ -535,6 +736,7 @@ section.container {
   padding: 28px;
   box-shadow: 6px 6px 0 var(--ink);
   height: 100%;
+  color: #000000;
 }
 
 /* Tag + Prize */
@@ -1007,5 +1209,21 @@ footer {
 
 .input-group .btn:hover {
   background:yellow;
+}
+
+/* =============================== */
+/* CARD LINK STYLES */
+/* =============================== */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
 }
 
